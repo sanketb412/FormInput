@@ -59,7 +59,7 @@
         const text = document.querySelector('#test');
         const textError = document.querySelector('.test-error');
         text.addEventListner('input', function() {
-            let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+            let nameRegex = RegExp('^[A-Z]{1}[a-z]{7,}$');
             if (nameRegex.test(text.value))
                 textError.textContent = "";
             else textError.textContent = "Name is Incorrect";
@@ -89,7 +89,7 @@
         const password = document.querySelector('#pwd');
         const passwordError = document.querySelector('.pwd-error');
         password.addEventListener('input', function(){
-            let pwdRegex = RegExp('^[a-zA-z]{8,}$');
+            let pwdRegex = RegExp('^[a-zA-z]{8,}[0-9]{1,}[$#@&]{1,}$');
             if(pwdRegex.test(password.value))
                 passwordError.textContent="";
             else passwordError.textContent="Password is invalid";
