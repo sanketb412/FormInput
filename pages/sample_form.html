@@ -65,6 +65,16 @@
             else textError.textContent = "Name is Incorrect";
         });
 
+        //check valid email
+        const email = document.querySelector('#email');
+        const emailError = document.querySelector('.email-error');
+        email.addEventListener('input',function(){
+            let emailRegex = RegExp('^[a-z0-9+_.-]+@[a-zA-Z0-9.-]+$');
+            if(emailRegex.test(email.value))
+                emailError.textContent = "";
+            else emailError.textContent="Email is Incorrect";
+         });
+         
         const salary = document.querySelector('#salary');
         const output = document.querySelector('.salary-output');
         output.textContent = salary.value;
