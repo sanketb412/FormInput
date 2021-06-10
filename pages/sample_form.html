@@ -55,7 +55,7 @@
     </form>
     <script>
 
-        // checking valid Name by User
+        // checking valid Name from User
         const text = document.querySelector('#test');
         const textError = document.querySelector('.test-error');
         text.addEventListner('input', function() {
@@ -65,7 +65,7 @@
             else textError.textContent = "Name is Incorrect";
         });
 
-        //check valid email
+        //checking valid email from User
         const email = document.querySelector('#email');
         const emailError = document.querySelector('.email-error');
         email.addEventListener('input',function(){
@@ -75,7 +75,7 @@
             else emailError.textContent="Email is Incorrect";
          });
          
-         //check valid mobile number
+         //checking valid mobile number from User
         const tel=document.querySelector("#tel");
         const telError=document.querySelector(".tel-error");
         tel.addEventListener('input',function(){
@@ -83,6 +83,16 @@
             if(telRegex.test(tel.value))
                 telError.textContent="";
             else telError.textContent="Mobile Number is invalid"
+        });
+
+        //checking valid password from User
+        const password = document.querySelector('#pwd');
+        const passwordError = document.querySelector('.pwd-error');
+        password.addEventListener('input', function(){
+            let pwdRegex = RegExp('^[a-zA-z]{8,}$');
+            if(pwdRegex.test(password.value))
+                passwordError.textContent="";
+            else passwordError.textContent="Password is invalid";
         });
 
         const salary = document.querySelector('#salary');
